@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="es" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Congreso de Ingenierías UDL 2025</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- CABECERA / NAV: menú sticky con offcanvas y toggle de tema -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">Congreso UDL</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mainMenu" aria-controls="mainMenu" aria-label="Abrir menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="mainMenu">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title">Menú</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
+            <li class="nav-item"><a class="nav-link" href="#hero">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="#charlas">Charlas</a></li>
+            <li class="nav-item"><a class="nav-link" href="#agenda">Agenda</a></li>
+            <li class="nav-item"><a class="nav-link" href="#programa">Programa</a></li>
+            <li class="nav-item"><a class="nav-link" href="#talleres">Talleres</a></li>
+            <li class="nav-item"><a class="nav-link" href="#speakers">Speakers</a></li>
+            <li class="nav-item"><a class="nav-link" href="#galeria">Galería</a></li>
+            <li class="nav-item"><a class="nav-link" href="#registro">Registro</a></li>
+          </ul>
+          <div class="ms-lg-3 mt-3 mt-lg-0 d-flex gap-2">
+            <button id="toggleTheme" class="btn btn-outline-secondary btn-sm">Modo oscuro</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO: póster a la derecha + panel de texto con acento -->
+  <section id="hero" class="py-5 bg-light hero">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-12 col-md-6">
+          <h1 class="display-5 fw-bold">Congreso de Ingenierías UDL 2025</h1>
+          <p class="lead text-muted">Tecnología, innovación y futuro sostenible.</p>
+          <div class="d-flex gap-2">
+            <a href="#registro" class="btn btn-primary btn-lg">Regístrate</a>
+            <a href="#charlas" class="btn btn-outline-primary btn-lg">Ver charlas</a>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 text-center">
+          <img src="congreso/foto_segundo_congreso_37.jpeg" class="img-fluid rounded shadow" alt="Hero del congreso">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHARLAS: cards con botón de “Más info” (abre modal) -->
+  <section id="charlas" class="py-5">
+    <div class="container">
+      <h2 class="mb-4">Conferencias <span class="badge text-bg-success">Nuevo</span></h2>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <div class="col">
+          <div class="card h-100 shadow-sm hover-up">
+            <img src="congreso/colin.jpeg" class="card-img-top object-cover" alt="Oscar Colin Cortes">
+            <div class="card-body">
+              <h5 class="card-title">IA Industrial Cibersegura</h5>
+              <p class="card-text small text-muted mb-2">Ing. Oscar Colin Cortes — Cybersecurity Leader (Américas), Siemens.</p>
+            </div>
+            <div class="card-footer bg-transparent">
+              <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalCharla">Más info</button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 shadow-sm hover-up">
+            <img src="congreso/coxca.jpeg" class="card-img-top object-cover" alt="Gilberto Coxca">
+            <div class="card-body">
+              <h5 class="card-title">Inspekto: IA con ADN Industria</h5>
+              <p class="card-text small text-muted mb-2">Gilberto Coxca — Siemens Factory Automation.</p>
+            </div>
+            <div class="card-footer bg-transparent">
+              <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalCharla">Más info</button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 shadow-sm hover-up">
+            <img src="congreso/sanchez.jpeg" class="card-img-top object-cover" alt="Billy Sánchez Olivares">
+            <div class="card-body">
+              <h5 class="card-title">Robots Colaborativos</h5>
+              <p class="card-text small text-muted mb-2">Billy Sánchez Olivares — Project Manager Robótica León, GUREGO.</p>
+            </div>
+            <div class="card-footer bg-transparent">
+              <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalCharla">Más info</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AGENDA: acordeón simple para horarios por día -->
+  <section id="agenda" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="mb-4">Agenda</h2>
+      <div class="accordion" id="agendaAcc">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="day1h">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#day1" aria-expanded="true">Día 1</button>
+          </h2>
+          <div id="day1" class="accordion-collapse collapse show" data-bs-parent="#agendaAcc">
+            <div class="accordion-body">
+              <ul class="list-group">
+                <li class="list-group-item d-flex justify-content-between"><span>09:00 Registro</span><span class="badge text-bg-secondary">Lobby</span></li>
+                <li class="list-group-item d-flex justify-content-between"><span>10:00 Keynote</span><span class="badge text-bg-info">Auditorio</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- Agregar más días duplicando la estructura si hace falta -->
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAMA: tabla resumida del día -->
+  <section id="programa" class="py-5">
+    <div class="container">
+      <h2 class="mb-4">Programa</h2>
+      <div class="table-responsive shadow-sm rounded">
+        <table class="table table-striped table-hover mb-0">
+          <thead>
+            <tr><th>Hora</th><th>Actividad</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>7:00–7:30</td><td>Registro</td></tr>
+            <tr><td>7:45–8:00</td><td>Inauguración</td></tr>
+            <tr><td>8:00–8:45</td><td>Conferencia 1</td></tr>
+            <tr><td>9:00–9:30</td><td>Desayuno</td></tr>
+            <tr><td>9:45–10:30</td><td>Conferencia 2</td></tr>
+            <tr><td>10:45–11:30</td><td>Conferencia 3</td></tr>
+            <tr><td>11:45–12:15</td><td>Receso</td></tr>
+            <tr><td>12:15–14:00</td><td>Talleres</td></tr>
+            <tr><td>14:00–14:30</td><td>Clausura, Rifa y Fotografía</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPEAKERS: grid de tarjetas con roles -->
+  <section id="speakers" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="mb-4">Speakers</h2>
+      <div class="row g-4 row-cols-1 row-cols-md-2 row-cols-lg-3">
+        <div class="col"><div class="card h-100 border-0 shadow"><img src="congreso/colin.jpeg" class="card-img-top object-cover" alt="Oscar Colin"><div class="card-body"><h5 class="card-title mb-1">Ing. Oscar Colin Cortes</h5><p class="text-muted mb-2">Cybersecurity Leader — Siemens</p><span class="badge text-bg-success me-2">Keynote</span><span class="badge text-bg-secondary">Conferencista</span></div></div></div>
+        <div class="col"><div class="card h-100 border-0 shadow"><img src="congreso/coxca.jpeg" class="card-img-top object-cover" alt="Gilberto Coxca"><div class="card-body"><h5 class="card-title mb-1">Gilberto Coxca</h5><p class="text-muted mb-2">Siemens Factory Automation</p><span class="badge text-bg-secondary">Conferencista</span></div></div></div>
+        <div class="col"><div class="card h-100 border-0 shadow"><img src="congreso/sanchez.jpeg" class="card-img-top object-cover" alt="Billy Sánchez"><div class="card-body"><h5 class="card-title mb-1">Billy Sánchez Olivares</h5><p class="text-muted mb-2">GUREGO</p><span class="badge text-bg-secondary">Conferencista</span></div></div></div>
+        <div class="col"><div class="card h-100 border-0 shadow"><img src="congreso/martinez.jpeg" class="card-img-top object-cover" alt="Hugo Martínez"><div class="card-body"><h5 class="card-title mb-1">Hugo Martínez Zepeda</h5><p class="text-muted mb-2">VIAS 3D</p><span class="badge text-bg-info">Tallerista</span></div></div></div>
+        <div class="col"><div class="card h-100 border-0 shadow"><img src="congreso/macias.jpeg" class="card-img-top object-cover" alt="Ricardo Macías"><div class="card-body"><h5 class="card-title mb-1">Dr. Ricardo Macías Jamaica</h5><p class="text-muted mb-2">TECNM Celaya</p><span class="badge text-bg-info">Tallerista</span></div></div></div>
+        <div class="col"><div class="card h-100 border-0 shadow"><img src="congreso/ferro.jpeg" class="card-img-top object-cover" alt="Rodolfo Ferro"><div class="card-body"><h5 class="card-title mb-1">Ing. Rodolfo Ferro</h5><p class="text-muted mb-2">GameCoder Studios</p><span class="badge text-bg-info">Tallerista</span></div></div></div>
+        <div class="col"><div class="card h-100 border-0 shadow"><img src="congreso/alvarez.jpeg" class="card-img-top object-cover" alt="José E. Álvarez"><div class="card-body"><h5 class="card-title mb-1">Ing. José E. Álvarez Camarena</h5><p class="text-muted mb-2">Flecha Amarilla</p><span class="badge text-bg-info">Tallerista</span></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TALLERES: listado de talleres simultáneos en cards -->
+  <section id="talleres" class="py-5">
+    <div class="container">
+      <h2 class="mb-4">Talleres simultáneos</h2>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <div class="col"><div class="card h-100 shadow-sm hover-up"><img src="congreso/martinez.jpeg" class="card-img-top object-cover" alt="Hugo Martínez"><div class="card-body"><h5>Simulación con SolidWorks</h5><p class="small text-muted">Hugo Martínez Zepeda — VIAS 3D.</p></div></div></div>
+        <div class="col"><div class="card h-100 shadow-sm hover-up"><img src="congreso/macias.jpeg" class="card-img-top object-cover" alt="Dr. Ricardo Macías"><div class="card-body"><h5>Ciencia de Datos</h5><p class="small text-muted">Dr. Ricardo Macías Jamaica — TECNM Celaya.</p></div></div></div>
+        <div class="col"><div class="card h-100 shadow-sm hover-up"><img src="congreso/ferro.jpeg" class="card-img-top object-cover" alt="Rodolfo Ferro"><div class="card-body"><h5>Neuronas Artificiales</h5><p class="small text-muted">Ing. Rodolfo Ferro — GameCoder Studios.</p></div></div></div>
+        <div class="col"><div class="card h-100 shadow-sm hover-up"><img src="congreso/alvarez.jpeg" class="card-img-top object-cover" alt="José Emmanuel Álvarez"><div class="card-body"><h5>Manufactura Aditiva</h5><p class="small text-muted">Ing. José Emmanuel Álvarez Camarena — Flecha Amarilla.</p></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERÍA: carrusel automático con fade y altura consistente -->
+  <section id="galeria" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="mb-4">Galería</h2>
+      <div id="galeriaCarousel" class="carousel slide shadow rounded carousel-fade" data-bs-ride="carousel" data-bs-interval="2500" data-bs-pause="false">
+        <div class="carousel-inner">
+          <div class="carousel-item active"><img src="congreso/foto_segundo_congreso_27.jpeg" class="d-block w-100 carousel-img" loading="lazy" alt="Foto 1"></div>
+          <div class="carousel-item"><img src="congreso/foto_segundo_congreso_24.jpeg" class="d-block w-100 carousel-img" loading="lazy" alt="Foto 2"></div>
+          <div class="carousel-item"><img src="congreso/foto_segundo_congreso_29.jpeg" class="d-block w-100 carousel-img" loading="lazy" alt="Foto 3"></div>
+          <div class="carousel-item"><img src="congreso/foto_segundo_congreso_30.jpeg" class="d-block w-100 carousel-img" loading="lazy" alt="Foto 4"></div>
+          <div class="carousel-item"><img src="congreso/foto_segundo_congreso_21.jpeg" class="d-block w-100 carousel-img" loading="lazy" alt="Foto 5"></div>
+          <div class="carousel-item"><img src="congreso/foto_segundo_congreso_18.jpeg" class="d-block w-100 carousel-img" loading="lazy" alt="Foto 6"></div>
+          <div class="carousel-item"><img src="congreso/foto_segundo_congreso_22.jpeg" class="d-block w-100 carousel-img" loading="lazy" alt="Foto 7"></div>
+          <div class="carousel-item"><img src="congreso/foto_segundo_congreso_33.jpeg" class="d-block w-100 carousel-img" loading="lazy" alt="Foto 8"></div>
+          <div class="carousel-item"><img src="congreso/foto_segundo_congreso_32.jpeg" class="d-block w-100 carousel-img" loading="lazy" alt="Foto 9"></div>
+          <div class="carousel-item"><img src="congreso/foto_segundo_congreso_38.jpeg" class="d-block w-100 carousel-img" loading="lazy" alt="Foto 10"></div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#galeriaCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Anterior</span></button>
+        <button class="carousel-control-next" type="button" data-bs-target="#galeriaCarousel" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Siguiente</span></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- REGISTRO: formulario con validación nativa + toast de éxito -->
+  <section id="registro" class="py-5">
+    <div class="container">
+      <h2 class="mb-4">Registro</h2>
+      <form class="row g-3 needs-validation" novalidate id="regForm">
+        <div class="col-md-6">
+          <label class="form-label">Nombre</label>
+          <input type="text" class="form-control" required>
+          <div class="invalid-feedback">Ingresa tu nombre.</div>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Correo</label>
+          <input type="email" class="form-control" required>
+          <div class="invalid-feedback">Correo inválido.</div>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Carrera</label>
+          <input type="text" class="form-control" required>
+          <div class="invalid-feedback">Indica tu carrera.</div>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Plantel</label>
+          <input type="text" class="form-control" required>
+          <div class="invalid-feedback">Indica tu plantel.</div>
+        </div>
+        <div class="col-12">
+          <button class="btn btn-success" type="submit">Enviar</button>
+        </div>
+      </form>
+
+      <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+        <div id="toastOk" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="toast-header">
+            <strong class="me-auto">Registro</strong>
+            <small>Ahora</small>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+          </div>
+          <div class="toast-body">¡Tus datos fueron enviados!</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PIE / FOOTER: breadcrumb simple + créditos -->
+  <footer class="py-4 bg-body-tertiary">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+      <nav aria-label="breadcrumb" class="mb-2 mb-md-0">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="#hero">Inicio</a></li>
+          <li class="breadcrumb-item"><a href="#charlas">Charlas</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Registro</li>
+        </ol>
+      </nav>
+      <small class="text-muted">© 2025 Universidad de León • Congreso de Ingenierías</small>
+    </div>
+  </footer>
+
+  <!-- MODAL: contenido extra para las charlas -->
+  <div class="modal fade" id="modalCharla" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Detalles de la charla</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          Info ampliada de la charla seleccionada...
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" data-bs-dismiss="modal">Entendido</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS: Bootstrap + validación, tema, navbar scrolled y “reveal” -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+  (() => {
+    // Validación y Toast de envío
+    const form = document.getElementById('regForm');
+    const toastEl = document.getElementById('toastOk');
+    const toast = toastEl ? new bootstrap.Toast(toastEl) : null;
+
+    form?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (!form.checkValidity()) {
+        e.stopPropagation();
+      } else {
+        toast?.show();
+        form.reset();
+        form.classList.remove('was-validated');
+        return;
+      }
+      form.classList.add('was-validated');
+    });
+
+    // Toggle de tema (claro/oscuro)
+    document.getElementById('toggleTheme')?.addEventListener('click', () => {
+      const html = document.documentElement;
+      html.setAttribute('data-bs-theme', html.getAttribute('data-bs-theme') === 'light' ? 'dark' : 'light');
+    });
+
+    // Navbar “scrolled” (sombra/estado al hacer scroll)
+    const nav = document.querySelector('.navbar');
+    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 10);
+    onScroll();
+    window.addEventListener('scroll', onScroll);
+
+    // Scroll Reveal suave (aplica clases sin tocar HTML)
+    const revealTargets = document.querySelectorAll('section, .card, .navbar, footer, .accordion, .table');
+    revealTargets.forEach((el, i) => {
+      el.classList.add('reveal-up');
+      el.style.transitionDelay = `${Math.min(i * 40, 260)}ms`;
+    });
+
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in-view');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealTargets.forEach(el => io.observe(el));
+  })();
+  </script>
+</body>
+</html>
