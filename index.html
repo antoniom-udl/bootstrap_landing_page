@@ -4,9 +4,21 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Congreso de Ingenierías UDL 2025</title>
+
+  <!-- Script: fuerza modo oscuro desde el inicio -->
+  <script>
+    (function () {
+      const saved = localStorage.getItem('theme');
+      const theme = saved || 'dark'; // siempre arranca en oscuro
+      document.documentElement.setAttribute('data-bs-theme', theme);
+    })();
+  </script>
+
+  <!-- CSS de Bootstrap y estilos propios -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="styles.css" rel="stylesheet">
 </head>
+
 <body>
 
   <!-- CABECERA / NAV: menú sticky con offcanvas y toggle de tema -->
@@ -32,6 +44,8 @@
             <li class="nav-item"><a class="nav-link" href="#speakers">Speakers</a></li>
             <li class="nav-item"><a class="nav-link" href="#galeria">Galería</a></li>
             <li class="nav-item"><a class="nav-link" href="#registro">Registro</a></li>
+            <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+
           </ul>
           <div class="ms-lg-3 mt-3 mt-lg-0 d-flex gap-2">
             <button id="toggleTheme" class="btn btn-outline-secondary btn-sm">Modo oscuro</button>
@@ -247,6 +261,87 @@
       </div>
     </div>
   </section>
+
+  <!-- FAQ: preguntas frecuentes en accordion -->
+<section id="faq" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="mb-2">Preguntas frecuentes</h2>
+    <p class="text-muted mb-4">Dudas rápidas sobre el Congreso de Ingenierías UDL 2025.</p>
+
+    <div class="accordion shadow-sm rounded overflow-hidden" id="faqAcc">
+      <!-- Registro y costo -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faq-h1">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq-c1" aria-expanded="true" aria-controls="faq-c1">
+            ¿Cómo me registro y tiene algún costo?
+          </button>
+        </h2>
+        <div id="faq-c1" class="accordion-collapse collapse show" aria-labelledby="faq-h1" data-bs-parent="#faqAcc">
+          <div class="accordion-body">
+            El registro es gratuito y se hace desde la sección <a href="#registro">Registro</a>. Te llegará un correo de confirmación al finalizar.
+          </div>
+        </div>
+      </div>
+
+      <!-- Sede -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faq-h2">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-c2" aria-expanded="false" aria-controls="faq-c2">
+            ¿Dónde se realiza el congreso?
+          </button>
+        </h2>
+        <div id="faq-c2" class="accordion-collapse collapse" aria-labelledby="faq-h2" data-bs-parent="#faqAcc">
+          <div class="accordion-body">
+            El evento se lleva a cabo en el auditorio principal de la Universidad de León (UDL), campus León. Revisa la <a href="#programa">programación</a> para detalles por sala.
+          </div>
+        </div>
+      </div>
+
+      <!-- Constancias -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faq-h3">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-c3" aria-expanded="false" aria-controls="faq-c3">
+            ¿Entregan constancia de participación?
+          </button>
+        </h2>
+        <div id="faq-c3" class="accordion-collapse collapse" aria-labelledby="faq-h3" data-bs-parent="#faqAcc">
+          <div class="accordion-body">
+            Sí. Se otorga constancia digital a quienes completen el registro y tengan al menos el 80% de asistencia a conferencias o talleres.
+          </div>
+        </div>
+      </div>
+
+      <!-- Talleres simultáneos -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faq-h4">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-c4" aria-expanded="false" aria-controls="faq-c4">
+            ¿Cómo elijo mi taller si hay varios al mismo tiempo?
+          </button>
+        </h2>
+        <div id="faq-c4" class="accordion-collapse collapse" aria-labelledby="faq-h4" data-bs-parent="#faqAcc">
+          <div class="accordion-body">
+            Los talleres son simultáneos y con cupo limitado. Elige tu taller durante el registro en <a href="#registro">Registro</a>. Te recomendamos llegar con 10 minutos de anticipación.
+          </div>
+        </div>
+      </div>
+
+      <!-- Recomendaciones -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faq-h5">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-c5" aria-expanded="false" aria-controls="faq-c5">
+            ¿Qué debo llevar o considerar el día del evento?
+          </button>
+        </h2>
+        <div id="faq-c5" class="accordion-collapse collapse" aria-labelledby="faq-h5" data-bs-parent="#faqAcc">
+          <div class="accordion-body">
+            Trae tu credencial de estudiante/identificación, laptop para talleres técnicos y llega con tiempo para tu registro. Revisa la <a href="#agenda">agenda</a> para organizar tu día.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
   <!-- PIE / FOOTER: breadcrumb simple + créditos -->
   <footer class="py-4 bg-body-tertiary">
